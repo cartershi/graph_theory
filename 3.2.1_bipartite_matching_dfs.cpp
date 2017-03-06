@@ -1,4 +1,5 @@
 //hdu 2063 dfs version
+//O(n^3)
 #include <stdio.h>
 #define NN 510
 int edge[NN][NN];
@@ -26,7 +27,7 @@ int main()
 		for (i = 1; i <= n1; i++)
 		{
 			for (j = 1; j <= n2; j++) visited[j] = 0;
-			if (dfs(i)) ans++;
+			if (dfs(i)) ans++;  //dfs to find an augmenting path
 		}
 		printf("%d\n",ans);
 		scanf("%d", &m);
@@ -40,7 +41,7 @@ bool dfs(int u)
 	if (edge[u][j]!=0&&visited[j]==0)
 	{
 		visited[j] = 1;
-		if (match[j]==-1||dfs(match[j]))
+		if (match[j]==-1||dfs(match[j]))    //not matched or find augment path
 		{
 			match[j] = u;
 			return true;

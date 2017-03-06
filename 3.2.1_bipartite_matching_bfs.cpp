@@ -1,4 +1,5 @@
 //hdu 2063 bfs version
+//O(nm)
 #include<stdio.h>
 #include <vector>
 #include <queue>
@@ -25,7 +26,7 @@ int main()
 		ans = 0;
 		for (i = 1; i <= n1; i++) match1[i] = 0;
 		for (i = 1; i <= n2; i++) match2[i] = 0;
-		for (i = 1; i <= n1; i++)
+		for (i = 1; i <= n1; i++)   //try to match every vertex
 		if (match1[i] == 0)
 		{
 			for (j = 1; j <= n2; j++) father[j] = 0;
@@ -41,18 +42,18 @@ int main()
 void aug()
 {
 	int u, v1, v2, v;
-	while (!s.empty())
+	while (!s.empty())  //s queue
 	{
 		u = s.front();
 		s.pop();
 		for (vector<int>::iterator it = edge[u].begin(); it != edge[u].end(); it++)
-		if (father[*it] == 0)
+		if (father[*it] == 0)   //*it not visited
 		{
 			father[*it] = u;
-			if (match2[*it] != 0) s.push(match2[*it]);
+			if (match2[*it] != 0) s.push(match2[*it]);  //if *it matchted,add it to s
 			else
-			{
-				v2 = *it;
+			{   
+				v2 = *it;   //if *it unmatched,augmenting path found
 				v1 = u;
 				while (v1 != 0)
 				{
