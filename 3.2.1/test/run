@@ -1,0 +1,7 @@
+#!/bin/sh
+
+#make clean
+make
+./data
+./3.2.1_bipartite_matching_dfs
+./3.2.1_bipartite_matching_bfs
