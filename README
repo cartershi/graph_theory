@@ -1,3 +1,8 @@
-This repository is the implementation of the psedocode of 'INTRODUCTION TO GRAPH THEORY' written BY WEST.
+This repository is the implementation of the psedocode of
+'INTRODUCTION TO GRAPH THEORY' written BY WEST.
 
-Each folder contains a '*.cpp' and a 'test' folder, which is used to debug and test my algorithm's speed.Type in './run' to run the script in the test folder.
+Each folder contains a '*.cpp' and a 'test' folder, 
+which is used to debug and test my algorithm's speed.
+Type in './run' to run the script in the test folder.
+
+While I have tested many cases,I can't make sure that my code is totally right.
